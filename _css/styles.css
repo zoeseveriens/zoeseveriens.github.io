@@ -1,0 +1,519 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+/* typografie
+==================================================*/
+
+section h1 {
+    font-family: 'Prata', serif;
+    font-size: 50px;
+    font-weight: 100;
+    margin: 0;
+}
+
+#projecten h1,
+#contact h1 {
+    font-size: 40px;
+}
+
+#over h1 {
+    font-size: 55px;
+    margin-top: 1em;
+}
+
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 100;
+    color: #425BB5;
+
+}
+
+h2:before {
+    background-color: #425BB5;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 2%;
+}
+
+p {
+    font-family: 'Kanit', sans-serif;
+}
+
+/* navigatie
+==================================================*/
+header nav {
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 16px 17px -13px rgba(204, 204, 204, 1);
+}
+
+header ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+@media (min-width:768px) {
+    header ul {
+        width: 740px;
+    }
+}
+
+@media (min-width:992px) {
+    header ul {
+        width: 960px;
+    }
+}
+
+@media (min-width:1200px) {
+    header ul {
+        width: 1070px;
+    }
+}
+
+li {
+    list-style: none;
+    margin: 0.5em 1em;
+    font-family: 'Kanit', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+    color: #425BB5;
+}
+
+/* landings pagina
+==================================================*/
+.background_clr {
+    background-color: #F3F3F3;
+}
+
+/*
+#home p {
+    margin-top: 0;
+    margin-left: 0.5em;
+}
+
+#home {
+    padding: 300px 25px 100px 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width:768px) {
+    #home {
+        width: 740px;
+    }
+}
+
+@media (min-width:992px) {
+    #home {
+        width: 960px;
+    }
+}
+
+@media (min-width:1200px) {
+    #home {
+        width: 1070px;
+    }
+}
+*/
+
+/* over mij
+==================================================*/
+#over {
+    background-color: #F3F3F3;
+    padding: 200px 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width:768px) {
+    #over {
+        width: 740px;
+    }
+}
+
+@media (min-width:992px) {
+    #over {
+        width: 960px;
+    }
+}
+
+@media (min-width:1200px) {
+    #over {
+        width: 1070px;
+    }
+}
+
+
+
+#over p {
+    margin-left: 1em;
+    margin-top: -0.5em;
+
+}
+
+#over img {
+    margin-left: 0;
+}
+
+
+
+@media (min-width:994px) {
+    #over {
+        display: flex;
+    }
+
+    .column {
+        flex: 50%;
+        width: 740px;
+    }
+
+    #over img {
+        margin-left: 150px;
+    }
+}
+
+
+/* Mijn projecten
+==================================================*/
+#projecten {
+    padding: 100px 25px;
+    margin: auto;
+    background-color: white;
+}
+
+
+
+article {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    height: 350px;
+}
+
+/* bron code https://codepen.io/gerbera36/pen/aBKVKR */
+article .overbox {
+    background-color: #425BB5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    z-index: 100;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
+    width: 350px;
+    height: 350px;
+    padding: 90px 0 0 0;
+}
+
+article:hover .overbox {
+    opacity: 0.9;
+}
+
+article .overtext {
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    transform: translateY(40px);
+    -webkit-transform: translateY(40px);
+}
+
+article .title {
+    font-size: 2.5em;
+    font-family: 'Prata', sans-serif;
+    text-align: center;
+    opacity: 0;
+    transition-delay: 0.1s;
+    transition-duration: 0.2s;
+}
+
+
+article:hover .title,
+article:focus .title {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+}
+
+article .tagline {
+    margin-top: -3em;
+    font-size: 0.8em;
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    opacity: 0;
+    transition-delay: 0.2s;
+    transition-duration: 0.2s;
+}
+
+article:hover .tagline,
+article:focus .tagline {
+    opacity: 1;
+    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+}
+
+.lowlands_foto {
+    width: 600px;
+    height: auto;
+    position: relative;
+    right: 8em;
+}
+
+.og_foto {
+    width: 490px;
+    height: auto;
+    position: relative;
+    right: 4em;
+}
+
+.be_foto {
+    width: 490px;
+    height: auto;
+    position: relative;
+    right: 4em;
+}
+
+.vid_foto {
+    width: 480px;
+    height: auto;
+    position: relative;
+    right: 4em;
+
+}
+
+.isga_foto {
+    width: 540px;
+    height: auto;
+    position: relative;
+    right: 6.25em;
+}
+
+.grid {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 60px;
+    display: grid;
+    grid-column: 1;
+    grid-gap: 1em;
+}
+
+@media (min-width:768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1em;
+        width: 750px;
+    }
+
+    article {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (min-width:992px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+        width: 970px;
+    }
+
+    article {
+        width: 283px;
+        height: 283px;
+    }
+
+    .lowlands_foto {
+        width: 510px;
+        height: auto;
+        position: relative;
+        right: 7em;
+    }
+
+    .og_foto {
+        width: 400px;
+        height: auto;
+        position: relative;
+        right: 4em;
+    }
+
+    .be_foto {
+        width: 400px;
+        height: auto;
+        position: relative;
+        right: 3.5em;
+    }
+
+    .vid_foto {
+        width: 380px;
+        height: auto;
+        position: relative;
+        right: 3em;
+
+    }
+
+    .isga_foto {
+        width: 480px;
+        height: auto;
+        position: relative;
+        right: 6.25em;
+    }
+
+}
+
+@media (min-width:1200px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+        width: 1070px;
+    }
+
+    article {
+        width: 350px;
+        height: 350px;
+    }
+
+    .lowlands_foto {
+        width: 600px;
+        height: auto;
+        position: relative;
+        right: 8em;
+    }
+
+    .og_foto {
+        width: 490px;
+        height: auto;
+        position: relative;
+        right: 4em;
+    }
+
+    .be_foto {
+        width: 490px;
+        height: auto;
+        position: relative;
+        right: 4em;
+    }
+
+    .vid_foto {
+        width: 480px;
+        height: auto;
+        position: relative;
+        right: 4em;
+
+    }
+
+    .isga_foto {
+        width: 540px;
+        height: auto;
+        position: relative;
+        right: 6.25em;
+    }
+}
+
+
+/* CONTACT
+==================================================*/
+#contact {
+    padding: 100px 25px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #F3F3F3;
+}
+
+@media (min-width:768px) {
+    #contact {
+        width: 740px;
+    }
+}
+
+@media (min-width:992px) {
+    #contact {
+        width: 960px;
+    }
+}
+
+@media (min-width:1200px) {
+    #contact {
+        width: 1070px;
+    }
+}
+
+#contact p {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#contact a:link {
+    color: black;
+}
+
+#contact a:hover {
+    color: #425BB5;
+}
+
+/* FOOTER
+==================================================*/
+.credit {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* Detail paginas
+==================================================*/
+
+.detail_paginas {
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 25px 100px 25px;
+}
+
+.detail_paginas img {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ontwerp_link {
+    text-transform: uppercase;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+video {
+    width: 750px;
+}
